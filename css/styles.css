@@ -1,0 +1,35 @@
+
+body {
+	padding: 40px;
+}
+
+body, p { font-size: 24px; }
+
+
+.general{
+	color: red;
+}
+.html{
+	color: blue;
+}
+.css{
+	color: orange;
+}
+.js{
+	color: purple;
+}
+.testing{
+	color: pink;
+}
+.performance{
+	color: aqua;
+}
+.network{
+	color: brown;
+}
+.coding {
+	color: green;
+}
+.fun {
+	color: lime;
+}
