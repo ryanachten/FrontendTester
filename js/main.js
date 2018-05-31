@@ -22,16 +22,16 @@ $(document).ready(function () {
   }
 
   // Create models and add them to view
-  const questionItems = new QuestionItems();
-  for (let i = 0; i < questionList.length; i++) {
-    const currentQuestion = allQuestionHash[questionList[i]];
-    questionItems.add(new QuestionItem({
-      key: questionList[i],
-      section: currentQuestion.section,
-      question: currentQuestion.question
-    }));
-  }
+  const tempIndex = Math.floor(Math.random()*Object.keys(allQuestionHash).length);
+  const tempKey = Object.keys(allQuestionHash)[tempIndex];
+  const currentQuestion = allQuestionHash[tempKey];
 
-  const questionListView = new QuestionItemsView({model: questionItems});
-  $('body').append(questionListView.render().$el);
+  const questionItem = new QuestionItem({
+    key: tempKey,
+    section: currentQuestion.section,
+    question: currentQuestion.question
+  });
+  const questionItemView = new QuestionItemView({ model: questionItem });
+
+  $('body').append(questionItemView.render().$el);
 });
