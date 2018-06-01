@@ -27,23 +27,30 @@
         <script src="js/models/testContainer.js" charset="utf-8"></script>
         <script src="js/views/testContainerView.js" charset="utf-8"></script>
         <script type="text/html" id="testContainerTemplate">
-          {{#showAnswer}}
-            <div class="{{section}}">
-              <h1>{{question}}</h1>
-              <h3>Your answer:</h3>
-              <p>{{userAnswer}}</p>
-              <h3>Our answer:</h3>
-              <p>{{storedAnswer}}</p>
-              <button class="nextQuestion">Continue</button>
+          <div class="test__container {{section}}">
+            <div class="test__content">
+              <h1 class="test__question">{{question}}</h1>
+              {{#showAnswer}}
+                <div class="test__answers">
+                  <div class="test__userAnswers">
+                    <h3>Your answer:</h3>
+                    <p>{{userAnswer}}</p>
+                  </div>
+                  <div class="test__storedAnswers">
+                    <h3>Our answer:</h3>
+                    <p>{{storedAnswer}}</p>
+                  </div>
+                </div>
+                <button class="nextQuestion">Next Question!</button>
+              {{/showAnswer}}
+              {{^showAnswer}}
+                <div class="test__inputFields">
+                  <textarea autofocus class="answerField" />
+                  <button class="submitAnswer">Submit!</button>
+                </div>
+              {{/showAnswer}}
             </div>
-          {{/showAnswer}}
-          {{^showAnswer}}
-            <div class="{{section}}">
-              <h1>{{question}}</h1>
-              <textarea autofocus class="answerField" />
-              <button class="submitAnswer">Done!</button>
-            </div>
-          {{/showAnswer}}
+          </div>
         </script>
 
         <script src="js/main.js"></script>

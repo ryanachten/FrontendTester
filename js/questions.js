@@ -20,7 +20,7 @@ const questionObj = {
     }
   ],
   testing : [
-    { question: "What are some advantages/disadvantages to testing your code?",
+    { question: "What are some advantages / disadvantages to testing your code?",
       answer: "meow"
     }
   ],
