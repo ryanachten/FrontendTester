@@ -1,9 +1,16 @@
-const QuestionContainer = Backbone.Model.extend({
+const TestContainer = Backbone.Model.extend({
 
+  validate: function (attrs) {
+    // Ensure allquestions attribute is specified when model is instantiated
+    if (!attrs.allQuestions) {
+      return 'allQuestions attribute needs to be specified';
+    }
+  },
+
+    // Create new model based off randomly assigned question
   createNewModel: function () {
-    // Create models and add them to view
-    const allQuestionHash = this.get('allQuestions');
 
+    const allQuestionHash = this.get('allQuestions');
     const tempIndex = Math.floor(Math.random()*Object.keys(allQuestionHash).length);
     const tempKey = Object.keys(allQuestionHash)[tempIndex];
     const currentQuestion = allQuestionHash[tempKey];

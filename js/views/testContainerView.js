@@ -1,4 +1,4 @@
-const QuestionContainerView = Backbone.View.extend({
+const TestContainerView = Backbone.View.extend({
 
   initialize: function (options) {
     // Ensure question collection is passed when view is instantiated
@@ -14,12 +14,13 @@ const QuestionContainerView = Backbone.View.extend({
   onSubmitAnswer: function () {
     const textContent = this.$('.answerField').val();
     if (textContent) {
+      // Set answer to model amd store in local storage
       const questionItem = this.model.get('questionItem');
       questionItem.set('answer', textContent);
       questionItem.storeAnswer();
+      // Generate new model and render it to the screen
       this.model.createNewModel();
       this.render();
-
     }
     else {
       alert('Yo! Add an answer!');

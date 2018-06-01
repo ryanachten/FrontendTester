@@ -12,12 +12,10 @@ $(document).ready(function () {
     });
   });
 
-  // const questionItemView = new QuestionItemView({ model: questionItem });
-  const questionContainer = new QuestionContainer({ allQuestions: allQuestionHash });
-  questionContainer.createNewModel();
+  const testContainer = new TestContainer({ allQuestions: allQuestionHash });
+  testContainer.createNewModel();
 
-  const questionContainerView = new QuestionContainerView({ model: questionContainer });
+  const testContainerView = new TestContainerView({ model: testContainer });
 
-
-  $('body').append(questionContainerView.render().$el);
+  $('body').append(testContainerView.render().$el);
 });
