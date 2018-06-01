@@ -8,7 +8,7 @@ const QuestionItemView = Backbone.View.extend({
   },
 
   render: function () {
-    this.$el.html(this.model.get('question'));
+    this.$el.html( this.model.get('question'));
     $(this.$el).addClass(this.model.get('section'));
     return this;
   }
