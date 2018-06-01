@@ -8,7 +8,8 @@ const TestContainerView = Backbone.View.extend({
   },
 
   events: {
-    'click .submitAnswer' : 'onSubmitAnswer'
+    'click .submitAnswer' : 'onSubmitAnswer',
+    'click .nextQuestion' : 'onNextQuestion'
   },
 
   onSubmitAnswer: function () {
@@ -16,10 +17,11 @@ const TestContainerView = Backbone.View.extend({
     if (textContent) {
       // Set answer to model amd store in local storage
       const questionItem = this.model.get('questionItem');
-      questionItem.set('answer', textContent);
+      questionItem.set('userAnswer', textContent);
       questionItem.storeAnswer();
-      // Generate new model and render it to the screen
-      this.model.createNewModel();
+
+      // Render stored answer to screen
+      this.model.set('showAnswer', true);
       this.render();
     }
     else {
@@ -27,10 +29,30 @@ const TestContainerView = Backbone.View.extend({
     }
   },
 
+  onNextQuestion: function () {
+    // Hide answer for next question
+    this.model.set('showAnswer', false);
+
+    // Generate new model and render it to the screen
+    this.model.createNewModel();
+    this.render();
+  },
+
   render: function () {
+
     const questionItem = this.model.get('questionItem');
-    const view = new QuestionItemView({model: questionItem});
-    this.$el.html(view.render().$el.append('<div><textarea class="answerField" /><button class="submitAnswer">Done!</button></div>'));
+
+    let templateData = {
+      "showAnswer": this.model.get('showAnswer'),
+      "question": questionItem.get('question'),
+      "section": questionItem.get('section'),
+      "userAnswer": questionItem.get('userAnswer'),
+      "storedAnswer": questionItem.get('storedAnswer')
+    };
+
+    const template = $('#testContainerTemplate').html();
+    const html = Mustache.render(template, templateData);
+    this.$el.html(html);
 
     return this;
   }

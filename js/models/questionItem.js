@@ -14,7 +14,7 @@ const QuestionItem = Backbone.Model.extend({
   },
 
   defaults: {
-    answer: null
+    userAnswer: null
   },
 
 // Stores users answer and question key in local storage

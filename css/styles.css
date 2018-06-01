@@ -7,29 +7,29 @@ body, p { font-size: 24px; }
 
 
 .general{
-	color: red;
+	background-color: red;
 }
 .html{
-	color: blue;
+	background-color: blue;
 }
 .css{
-	color: orange;
+	background-color: orange;
 }
-.js{
-	color: purple;
+.javascript{
+	background-color: purple;
 }
 .testing{
-	color: pink;
+	background-color: pink;
 }
 .performance{
-	color: aqua;
+	background-color: aqua;
 }
 .network{
-	color: brown;
+	background-color: brown;
 }
 .coding {
-	color: green;
+	background-color: green;
 }
 .fun {
-	color: lime;
+	background-color: lime;
 }

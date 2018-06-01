@@ -7,6 +7,10 @@ const TestContainer = Backbone.Model.extend({
     }
   },
 
+  defaults: {
+    'showAnswer': false
+  },
+
     // Create new model based off randomly assigned question
   createNewModel: function () {
 
@@ -18,7 +22,8 @@ const TestContainer = Backbone.Model.extend({
     const questionItem = new QuestionItem({
       key: tempKey,
       section: currentQuestion.section,
-      question: currentQuestion.question
+      question: currentQuestion.question,
+      storedAnswer: currentQuestion.storedAnswer
     });
     this.set('questionItem', questionItem);
   },
