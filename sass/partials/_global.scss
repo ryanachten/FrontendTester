@@ -1,0 +1,24 @@
+$general-grad: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);
+$html-grad: linear-gradient(62deg, #D57EEB 0%, #FCCB90 100%);
+$css-grad: linear-gradient(-225deg, #5271C4 0%, #B19FFF 48%, #ECA1FE 100%);
+$javascript-grad: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);
+$testing-grad: linear-gradient(-66deg, #C2E59C 0%, #64B3F4 100%);
+$performance-grad: linear-gradient(62deg, #F68084 0%, #A6C0FE 100%);
+$network-grad: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+$coding-grad: linear-gradient(-180deg, #FBC2EB 0%, #A18CD1 100%);
+$fun-grad: linear-gradient(90deg, #FF7EB3 0%, #FF758C 100%);
+
+$body-color: black;
+
+
+@mixin custom-card {
+  background: #FFFFFF;
+  box-shadow: 0 0 24px 0 rgba(0,0,0,0.22), 0 24px 24px 0 rgba(0,0,0,0.30);
+  border-radius: 2px;
+}
+
+@mixin text-gradient {
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

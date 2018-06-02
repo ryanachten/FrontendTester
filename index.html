@@ -6,13 +6,12 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/styles.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.8/uuid.js" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
-        <script src="js/lib/modernizr-2.6.2.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- <script src="js/lib/modernizr-2.6.2.min.js"></script> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
         <script src="js/lib/jquery-min.js"></script>
@@ -29,25 +28,27 @@
         <script type="text/html" id="testContainerTemplate">
           <div class="test__container {{section}}">
             <div class="test__content">
-              <h1 class="test__question">{{question}}</h1>
+              <p class="test__section">{{section}} question</p>
+              <div class="test__question">
+                <h3>{{question}}</h3>
+              </div>
+
               {{#showAnswer}}
                 <div class="test__answers">
                   <div class="test__userAnswers">
-                    <h3>Your answer:</h3>
+                    <h5>Your answer:</h5>
                     <p>{{userAnswer}}</p>
                   </div>
                   <div class="test__storedAnswers">
-                    <h3>Our answer:</h3>
+                    <h5>Example answer:</h5>
                     <p>{{storedAnswer}}</p>
                   </div>
                 </div>
-                <button class="nextQuestion">Next Question!</button>
+                <button class="waves-effect waves-light btn nextQuestion">Next Question!</button>
               {{/showAnswer}}
               {{^showAnswer}}
-                <div class="test__inputFields">
-                  <textarea autofocus class="answerField" />
-                  <button class="submitAnswer">Submit!</button>
-                </div>
+                <textarea autofocus class="answerField materialize-textarea" />
+                <button class="waves-effect waves-light btn submitAnswer">Done!</button>
               {{/showAnswer}}
             </div>
           </div>

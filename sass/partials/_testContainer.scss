@@ -1,0 +1,79 @@
+.test__container {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+}
+.test__content{
+	margin: 0 auto;
+	padding: 0 20px;
+	text-align: center;
+}
+.test__section{
+	color: white;
+	text-transform: capitalize;
+}
+.test__question{
+  h3{
+    @include text-gradient;
+  }
+  @include custom-card;
+	margin: 0 auto;
+	max-width: 1000px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.test__container.general{
+	background-image: $general-grad;
+  .test__question h3{
+    background-image: $general-grad;
+  }
+}
+.test__container.html{
+	background-image: $html-grad;
+  .test__question h3{
+    background-image: $html-grad;
+  }
+}
+.test__container.css{
+	background-image: $css-grad;
+  .test__question h3{
+    background-image: $css-grad;
+  }
+}
+.test__container.javascript{
+	background-image: $javascript-grad;
+  .test__question h3{
+    background-image: $javascript-grad;
+  }
+}
+.test__container.testing{
+	background-image: $testing-grad;
+  .test__question h3{
+    background-image: $testing-grad;
+  }
+}
+.test__container.performance{
+	background-image: $performance-grad;
+  .test__question h3{
+    background-image: $performance-grad;
+  }
+}
+.test__container.network{
+	background-image: $network-grad;
+  .test__question h3{
+    background-image: $network-grad;
+  }
+}
+.test__container.coding {
+	background-image: $coding-grad;
+  .test__question h3{
+    background-image: $coding-grad;
+  }
+}
+.test__container.fun {
+	background-image: $fun-grad;
+  .test__question h3{
+    background-image: $fun-grad;
+  }
+}

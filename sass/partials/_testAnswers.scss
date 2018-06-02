@@ -1,0 +1,23 @@
+.test__answers{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	text-align: left;
+}
+.test__userAnswers, .test__storedAnswers{
+	margin-bottom: 40px;
+	width: 40%;
+	p{
+		padding: 10px;
+		@include custom-card;
+	}
+}
+@media screen and (max-width: 600px) {
+	.test__userAnswers, .test__storedAnswers{
+		width: 100%;
+	}
+}
+
+.nextQuestion{
+	color: $body-color;
+}
