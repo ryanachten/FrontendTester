@@ -1,24 +1,39 @@
 $general-grad: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);
+$general-color: #50A7C2;
 $html-grad: linear-gradient(62deg, #D57EEB 0%, #FCCB90 100%);
+$html-color: #50A7C2;
 $css-grad: linear-gradient(-225deg, #5271C4 0%, #B19FFF 48%, #ECA1FE 100%);
+$css-color: #5271C4;
 $javascript-grad: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);
+$javascript-color: #FA709A;
 $testing-grad: linear-gradient(-66deg, #C2E59C 0%, #64B3F4 100%);
+$testing-color: #64B3F4;
 $performance-grad: linear-gradient(62deg, #F68084 0%, #A6C0FE 100%);
+$performance-color: #F68084;
 $network-grad: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+$network-color: #8EC5FC;
 $coding-grad: linear-gradient(-180deg, #FBC2EB 0%, #A18CD1 100%);
+$coding-color: #A18CD1;
 $fun-grad: linear-gradient(90deg, #FF7EB3 0%, #FF758C 100%);
+$fun-color: #FF7EB3;
 
 $body-color: black;
-
+$bg-color: white;
+$header-type: 'Jua', sans-serif;
+$body-type: 'Arial', sans-serif;
 
 @mixin custom-card {
   background: #FFFFFF;
   box-shadow: 0 0 24px 0 rgba(0,0,0,0.22), 0 24px 24px 0 rgba(0,0,0,0.30);
-  border-radius: 2px;
+  border-radius: 10px;
 }
 
 @mixin text-gradient {
   background: -webkit-linear-gradient(#eee, #333);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+* {
+  font-family: $header-type;
 }

@@ -7,8 +7,14 @@
 .test__userAnswers, .test__storedAnswers{
 	margin-bottom: 40px;
 	width: 40%;
+	h6{
+		color: $bg-color;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+	}
 	p{
-		padding: 10px;
+		font-size: 1.2rem;
+		padding: 20px;
 		@include custom-card;
 	}
 }
@@ -20,4 +26,34 @@
 
 .nextQuestion{
 	color: $body-color;
+  font-family: $header-type;
+  text-transform: capitalize;
+
+	&.general{
+    color: $general-color;
+  }
+  &.html{
+    color: $html-color;
+  }
+  &.css{
+    color: $css-color;
+  }
+  &.javascript{
+    color: $javascript-color;
+  }
+  &.testing{
+    color: $testing-color;
+  }
+  &.performance{
+    color: $performance-color;
+  }
+  &.network{
+    color: $network-color;
+  }
+  &.coding{
+    color: $coding-color;
+  }
+  &.fun{
+    color: $fun-color;
+  }
 }

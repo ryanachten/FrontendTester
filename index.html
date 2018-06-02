@@ -11,6 +11,8 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!-- <script src="js/lib/modernizr-2.6.2.min.js"></script> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet"> -->
+        <link href="https://fonts.googleapis.com/css?family=Baloo|Chewy|Concert+One|Jua" rel="stylesheet">
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
@@ -28,27 +30,29 @@
         <script type="text/html" id="testContainerTemplate">
           <div class="test__container {{section}}">
             <div class="test__content">
-              <p class="test__section">{{section}} question</p>
+              <h6 class="test__section">{{section}} question</h6>
               <div class="test__question">
                 <h3>{{question}}</h3>
               </div>
 
               {{#showAnswer}}
-                <div class="test__answers">
+                <div class="test__answers {{section}}">
                   <div class="test__userAnswers">
-                    <h5>Your answer:</h5>
+                    <h6>Your Answer</h6>
                     <p>{{userAnswer}}</p>
                   </div>
                   <div class="test__storedAnswers">
-                    <h5>Example answer:</h5>
+                    <h6>Example Answer</h6>
                     <p>{{storedAnswer}}</p>
                   </div>
                 </div>
-                <button class="waves-effect waves-light btn nextQuestion">Next Question!</button>
+                <button class="waves-effect waves-light btn {{section}} nextQuestion">Next Question!</button>
               {{/showAnswer}}
               {{^showAnswer}}
-                <textarea autofocus class="answerField materialize-textarea" />
-                <button class="waves-effect waves-light btn submitAnswer">Done!</button>
+                <textarea autofocus placeholder="Write things here!" class="answerField materialize-textarea" />
+                <button class="waves-effect waves-light btn {{section}} submitAnswer">
+                  Done<i class="material-icons right">done</i>
+                </button>
               {{/showAnswer}}
             </div>
           </div>

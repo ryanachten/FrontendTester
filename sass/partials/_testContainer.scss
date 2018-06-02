@@ -1,5 +1,6 @@
 .test__container {
-	height: 100vh;
+	min-height: 100vh;
+  height: 100%;
 	display: flex;
 	align-items: center;
 }
@@ -10,11 +11,14 @@
 }
 .test__section{
 	color: white;
-	text-transform: capitalize;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+	text-transform: uppercase;
 }
 .test__question{
   h3{
     @include text-gradient;
+    margin: 0;
   }
   @include custom-card;
 	margin: 0 auto;
