@@ -10,9 +10,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!-- <script src="js/lib/modernizr-2.6.2.min.js"></script> -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-        <!-- <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet"> -->
-        <link href="https://fonts.googleapis.com/css?family=Baloo|Chewy|Concert+One|Jua" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
@@ -46,10 +46,12 @@
                     <p>{{storedAnswer}}</p>
                   </div>
                 </div>
-                <button class="waves-effect waves-light btn {{section}} nextQuestion">Next Question!</button>
+                <button class="waves-effect waves-light btn {{section}} nextQuestion">
+                  Next Question!<i class="material-icons left">thumb_up</i>
+                </button>
               {{/showAnswer}}
               {{^showAnswer}}
-                <textarea autofocus placeholder="Write things here!" class="answerField materialize-textarea" />
+                <textarea autofocus placeholder="Write your answer here!" class="answerField materialize-textarea" />
                 <button class="waves-effect waves-light btn {{section}} submitAnswer">
                   Done<i class="material-icons right">done</i>
                 </button>

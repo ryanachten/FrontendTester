@@ -4334,13 +4334,13 @@ button:focus {
 
 label {
   font-size: 0.8rem;
-  color: #9e9e9e; }
+  color: #fafafa; }
 
 /* Text Inputs + Textarea
    ========================================================================== */
 /* Style Placeholders */
 ::placeholder {
-  color: #d1d1d1; }
+  color: white; }
 
 /* Text inputs */
 input:not([type]),
@@ -4358,7 +4358,7 @@ input[type=search]:not(.browser-default),
 textarea.materialize-textarea {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #9e9e9e;
+  border-bottom: 1px solid #fafafa;
   border-radius: 0;
   outline: none;
   height: 3rem;
@@ -4698,7 +4698,7 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
   .input-field.col .prefix ~ .validate ~ label {
     width: calc(100% - 3rem - 1.5rem); }
   .input-field > label {
-    color: #9e9e9e;
+    color: #fafafa;
     position: absolute;
     top: 0;
     left: 0;
@@ -5155,7 +5155,7 @@ select {
     cursor: pointer;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #9e9e9e;
+    border-bottom: 1px solid #fafafa;
     outline: none;
     height: 3rem;
     line-height: 3rem;
@@ -6431,6 +6431,9 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
 * {
   font-family: "Jua", sans-serif; }
 
+.hiddendiv {
+  width: 100% !important; }
+
 .test__container {
   min-height: 100vh;
   height: 100%;
@@ -6438,14 +6441,18 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
   align-items: center; }
 
 .test__content {
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
   text-align: center; }
 
 .test__section {
+  border: 1px solid white;
   color: white;
+  display: inline-block;
   letter-spacing: 3px;
-  margin-bottom: 20px;
+  margin: 40px 0;
+  padding: 20px;
   text-transform: uppercase; }
 
 .test__question {
@@ -6453,7 +6460,6 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.22), 0 24px 24px 0 rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   margin: 0 auto;
-  max-width: 1000px;
   padding: 20px;
   margin-bottom: 40px; }
   .test__question h3 {
@@ -6519,7 +6525,7 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
   .submitAnswer.general {
     color: #50A7C2; }
   .submitAnswer.html {
-    color: #50A7C2; }
+    color: #D57EEB; }
   .submitAnswer.css {
     color: #5271C4; }
   .submitAnswer.javascript {
@@ -6539,7 +6545,7 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
   color: #50A7C2; }
 
 .test__answers.html .test__userAnswers, .test__answers.html .test__storedAnswers {
-  color: #50A7C2; }
+  color: #D57EEB; }
 
 .test__answers.css .test__userAnswers, .test__answers.css .test__storedAnswers {
   color: #5271C4; }
@@ -6576,11 +6582,14 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
     letter-spacing: 3px;
     text-transform: uppercase; }
   .test__userAnswers p, .test__storedAnswers p {
-    font-size: 1.2rem;
-    padding: 20px;
     background: #FFFFFF;
     box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.22), 0 24px 24px 0 rgba(0, 0, 0, 0.3);
-    border-radius: 10px; }
+    border-radius: 10px;
+    font-size: 1.2rem;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 20px;
+    white-space: pre-wrap; }
 
 @media screen and (max-width: 600px) {
   .test__userAnswers, .test__storedAnswers {
@@ -6592,7 +6601,7 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
   .nextQuestion.general {
     color: #50A7C2; }
   .nextQuestion.html {
-    color: #50A7C2; }
+    color: #D57EEB; }
   .nextQuestion.css {
     color: #5271C4; }
   .nextQuestion.javascript {

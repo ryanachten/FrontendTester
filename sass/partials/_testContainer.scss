@@ -5,14 +5,18 @@
 	align-items: center;
 }
 .test__content{
+  max-width: 1000px;
 	margin: 0 auto;
 	padding: 0 20px;
 	text-align: center;
 }
 .test__section{
+  border: 1px solid white;
 	color: white;
+  display: inline-block;
   letter-spacing: 3px;
-  margin-bottom: 20px;
+  margin: 40px 0;
+  padding: 20px;
 	text-transform: uppercase;
 }
 .test__question{
@@ -22,7 +26,6 @@
   }
   @include custom-card;
 	margin: 0 auto;
-	max-width: 1000px;
   padding: 20px;
   margin-bottom: 40px;
 }

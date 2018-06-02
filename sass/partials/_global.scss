@@ -1,7 +1,7 @@
 $general-grad: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);
 $general-color: #50A7C2;
 $html-grad: linear-gradient(62deg, #D57EEB 0%, #FCCB90 100%);
-$html-color: #50A7C2;
+$html-color: #D57EEB;
 $css-grad: linear-gradient(-225deg, #5271C4 0%, #B19FFF 48%, #ECA1FE 100%);
 $css-color: #5271C4;
 $javascript-grad: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);
@@ -36,4 +36,9 @@ $body-type: 'Arial', sans-serif;
 
 * {
   font-family: $header-type;
+}
+
+// Override for materialize multiline textarea
+.hiddendiv{
+  width: 100% !important;
 }
