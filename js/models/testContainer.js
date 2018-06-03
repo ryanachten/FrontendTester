@@ -1,30 +1,40 @@
-const TestContainer = Backbone.Model.extend({
+define([
+  'underscore',
+  'backbone',
+  'models/questionItem'
+], function (_, Backbone, QuestionItem) {
 
-  validate: function (attrs) {
-    // Ensure allquestions attribute is specified when model is instantiated
-    if (!attrs.allQuestions) {
-      return 'allQuestions attribute needs to be specified';
-    }
-  },
+  const TestContainer = Backbone.Model.extend({
 
-  defaults: {
-    'showAnswer': false
-  },
+    validate: function (attrs) {
+      // Ensure allquestions attribute is specified when model is instantiated
+      if (!attrs.allQuestions) {
+        return 'allQuestions attribute needs to be specified';
+      }
+    },
 
-    // Create new model based off randomly assigned question
-  createNewModel: function () {
+    defaults: {
+      'showAnswer': false
+    },
 
-    const allQuestionHash = this.get('allQuestions');
-    const tempIndex = Math.floor(Math.random()*Object.keys(allQuestionHash).length);
-    const tempKey = Object.keys(allQuestionHash)[tempIndex];
-    const currentQuestion = allQuestionHash[tempKey];
+      // Create new model based off randomly assigned question
+    createNewModel: function () {
 
-    const questionItem = new QuestionItem({
-      key: tempKey,
-      section: currentQuestion.section,
-      question: currentQuestion.question,
-      storedAnswer: currentQuestion.storedAnswer
-    });
-    this.set('questionItem', questionItem);
-  },
+      const allQuestionHash = this.get('allQuestions');
+      const tempIndex = Math.floor(Math.random()*Object.keys(allQuestionHash).length);
+      const tempKey = Object.keys(allQuestionHash)[tempIndex];
+      const currentQuestion = allQuestionHash[tempKey];
+
+      const questionItem = new QuestionItem({
+        key: tempKey,
+        section: currentQuestion.section,
+        question: currentQuestion.question,
+        storedAnswer: currentQuestion.storedAnswer
+      });
+      this.set('questionItem', questionItem);
+    },
+  });
+
+  return TestContainer;
+
 });
