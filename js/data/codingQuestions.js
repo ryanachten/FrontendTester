@@ -4,7 +4,7 @@ define([], function () {
       answer: "‘1020’"
     },
     { question: "What will be the output of the code below?\nconsole.log(0.1 + 0.2 == 0.3);",
-      answer: "False due to floating point precision in JS - make it fixed to pass true"
+      answer: "False due to floating point representation in JS (64-bit).\nCould use toFixed to pass true - console.log((0.1+0.2).toFixed(2) == 0.3)"
     },
     { question: "How would you make this work?\nadd(2, 5); // 7\nadd(2)(5); // 7",
       answer: "add(2, 5); // 7\nfunction add(a, b) {\nreturn a + b;\n}\n\nadd(2)(5); // 7\nfunction add(a) {\nreturn function (b) {\nreturn a + b;\n}\n}"
@@ -28,7 +28,7 @@ define([], function () {
       answer: "“one”, “three”, “two” since two is passed to the task queue which waits for the call stack to be completed before executing"
     },
     { question: "What is the difference between these four promises?\ndoSomething().then(function () {\nreturn doSomethingElse();\n});\n\ndoSomething().then(function () {\ndoSomethingElse();\n});\n\ndoSomething().then(doSomethingElse());\n\ndoSomething().then(doSomethingElse);",
-      answer: "1) Once the promise resolves it will execute an anon func which returns the doSomethingElse func\n2) Once the promise resolves it will execute an anon func which executes the doSomethingElse func\n3) Once the promise resolves it will execute the doSomethingElse func\n4) It is unclear what doSomethingElse contains here"
+      answer: "1) Once the promise resolves it will execute an anonymous function which returns the doSomethingElse function\n2) Once the promise resolves it will execute an anonymous function which executes the doSomethingElse function\n3) Once the promise resolves it will execute the doSomethingElse function\n4) It is unclear what doSomethingElse contains here"
     }
   ];
 

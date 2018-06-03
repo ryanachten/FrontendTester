@@ -1,27 +1,27 @@
 define([], function () {
   const generalQuestions = [
     { question: "What did you learn yesterday / this week?",
-      answer: "This week I have started learning Backbone.js as a means of furthering my frontend framework knowledge. I will later apply this by refactoring a previous project of mine."
+      answer: "This week I have started learning Backbone.js as a means of furthering my frontend framework knowledge."
     },
     { question: "What excites or interests you about coding?",
-      answer: "I like the fact that it is a field which is constantly evolving allows for endless learning and challenges as well as creative expression."
+      answer: "I love the fact that it is a field which is constantly evolving and one which allows for endless learning as well as creative expression."
     },
     { question: "What is a recent technical challenge you experienced and how did you solve it?",
-      answer: "My personal site was taking ages to load. To find out what was delaying the load process, I popped open Chrome’s network tool and, as I suspected, it was bloated images taking ages to be retrieved. I then used an online compression tool called optimizer to compress these by around 60%, reducing the load time dramatically."
+      answer: "My personal site was taking ages to load. I compressed site assets further and added gzip and brotli compression in the build process to speed things up."
     },
     { question: "When building a new web site or maintaining one, can you explain some techniques you have used to increase performance?",
-      answer: "A useful tool for getting ideas on where to start is the Google Pagespeed Insights tool, which provides a desktop and mobile rating for websites as well as useful suggestions\nIf using Webpack, use a production-ready src maps for production, vs the bloated version for development.\nOnline compression tools such as SVGOMG and Optimizer for jpg and png to reduce load time of my assets.\nAll else fails, employ compression algorithms on the build process or server, such as gzip and/or brotli"
+      answer: "A useful place to start is Google Pagespeed Insights, which provides a desktop and mobile rating for websites as well as useful suggestions\nBundle and minify JS/CSS via tools such as Webpack and Sass. Compress image assets safely using tools such as SVGOMG and Optimizer for jpg and png.\nEmploy CDN’s to enhance the number of concurrent downloads for the site load\nEmploy compression algorithms on the build process or server, such as gzip and/or brotli"
     },
     { question: "When building a new web site or maintaining one, can you explain some techniques you have used to increase performance?",
       answer: "Getting SEO working for SPA’s can be a pain; using Google Webmaster, you can aid your site’s indexability using verification tokens, requests for crawlers\nAlso having clear, human-readable meta descriptions and titles w/o any repeating keywords helps these crawlers understand your site"
     },
     {
       question: "Can you describe some SEO best practices or techniques you have used lately?",
-      answer: "Getting SEO working for SPA’s can be a pain; using Google Webmaster, you can aid your site’s indexability using verification tokens, requests for crawlers\nAlso having clear, human-readable meta descriptions and titles w/o any repeating keywords helps these crawlers understand your site"
+      answer: "Getting SEO working for SPA’s can be a pain; using Google Webmaster, I have increased site indexability using verification tokens and requests for crawlers\nAlso having clear, human-readable meta descriptions and titles w/o any repeating keywords helps these crawlers understand your site"
     },
     {
       question: "Can you explain any common techniques or recent issues solved in regards to front-end security?",
-      answer: "I was developing a digital writing/publishing platform on top of WordPress recently where this became an obvious factor. My approach to this was first to school up on WP security best practices. I was then able to validate and sanitise user input before writing to the database as well as escape database content before rendering it to the client."
+      answer: "To avoid issues such as XSS (cross-site scripting) attacks, escaping user input and request parameters is essential.\nA common issue with any framework, notably Wordpress, is not keeping the framework and dependencies up to date to take advantage of the latest security fixes and features."
     },
     {
       question: "What actions have you personally taken on recent projects to increase maintainability of your code?",
@@ -33,7 +33,7 @@ define([], function () {
     },
     {
       question: "Which version control systems are you familiar with?",
-      answer: "I have only really used git alongside hosts such as GitHub and BitBucket"
+      answer: "Git alongside services such as GitHub and BitBucket"
     },
     {
       question: "Can you describe your workflow when you create a web page?",
@@ -41,11 +41,11 @@ define([], function () {
     },
     {
       question: "If you have 5 different stylesheets, how would you best integrate them into the site?",
-      answer: "Well if by ‘integrate’, you mean simply import them into the site, you can use the standard <link> tag to import them, ordered by priority to cascade properly.\nHowever, if by ‘integrate’ you mean combine them performantly, we could refactor them as SCSS/Sass and import them into one single scss file before exporting as minified CSS."
+      answer: "If adopting a preprocessor is an option, I would adopt SCSS/Sass and import them into one single scss file before exporting as minified CSS.\nIf this is not an option, we can use the standard <link> tag to import them, ordered by priority to cascade properly."
     },
     {
       question: "Can you describe the difference between progressive enhancement and graceful degradation?",
-      answer: "Progressive enhancement is basically where we start with a baseline of features accessible to most browsers and then adding enhanced features for more capable browsers\nThe opposite approach is taken with graceful degradation, where full features are produced aimed at capable browsers, which are then substituted for less capable browsers, often by means of polyfills or fallbacks."
+      answer: "Progressive enhancement is where we start with a baseline of features accessible to most browsers and then adding enhanced features for more capable browsers.\nThe opposite approach is taken with graceful degradation, where full features are aimed at capable browsers, which are then substituted for less capable browsers, often by means of polyfills or fallbacks."
     },
     {
       question: "How would you optimize a website's assets/resources?",
@@ -69,7 +69,7 @@ define([], function () {
     },
     {
       question: "If you could master one technology this year, what would it be?",
-      answer: "I’m looking at exploring Python this year as I am exciting to explore the possibilities of AI with regards to visual experimentation. Additionally, I am already looking at GLSL to achieve things I have been somewhat limited using plain JS libraries (i.e. fractals etc)."
+      answer: "I’m looking at exploring Python this year as I am excited to explore the possibilities of AI with regards to visual experimentation."
     },
     {
       question: "Explain the importance of standards and standards bodies.",
@@ -85,11 +85,11 @@ define([], function () {
     },
     {
       question: "Explain some of the pros and cons for CSS animations versus JavaScript animations.",
-      answer: "CSS is faster and more performant on the browser since they use the GPU and don’t require JS event loops. However ,they are less programmatic since it relies on CSS lang, inconsistent support on older browsers\nJS is slower when manipulating and rendering to the DOM, however we can do cooler stuff through libraries such as Three.js and p5.js"
+      answer: "CSS is faster and more performant on the browser since they use the GPU and don’t require JS event loops. However, they are less programmatic since it relies on CSS lang, inconsistent support on older browsers\nJS is slower when manipulating and rendering to the DOM, however we can do cooler stuff through libraries such as Three.js and p5.js"
     },
     {
       question: "What does CORS stand for and what issue does it address?",
-      answer: "Cross-Origin Resource Sharing helps avoid malicious attacks on sites and users by ensuring that resources come from accepted points of origin"
+      answer: "Cross-Origin Resource Sharing uses HTTP headers to dictate which resources are acceptable from a server at a different origin. This helps prevent a script from one site accessing sensitive information through another site’s DOM"
     }
   ];
 

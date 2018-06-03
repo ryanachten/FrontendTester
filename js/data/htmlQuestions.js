@@ -1,10 +1,10 @@
 define([], function () {
   const htmlQuestions = [
     { question: "What does a doctype do?",
-      answer: "The doctype is used to specify the type of XML document being interpreted.\nIn an HTML context, (while this is somewhat of a legacy requirement) this helps ensure browsers interpret the HTML document according to relevant standards"
+      answer: "The doctype is used to specify the type of XML document being interpreted.\nIn an HTML context, while somewhat of a legacy requirement, this helps ensure browsers interpret the HTML document according to relevant standards"
     },
     { question: "How do you serve a page with content in multiple languages?",
-      answer: "First by setting the primary lang attribute in the html declaration of the page. Elements requiring translation, provide elements for each translation by assigning a lang attr\nAlternatively frameworks and CMS’ have different i8n l10 approaches but this goes outside of the scope of HTML"
+      answer: "First by setting the primary lang attribute in the html declaration of the page. Translations can be provided on an element-basis by providing an element for each language with a respective ‘lang’ attribute\nFrameworks and CMS’ have different i8n l10 approaches but this goes outside of the scope of HTML"
     },
     { question: "What kind of things must you be wary of when design or developing for multilingual sites?",
       answer: "Language direction - dir attr can be set to indicate language direction\nFont and language script character compatibility - :lang() selector can be used to do language-specific styles ( to say, change font or sizes)\nInterpretation goes beyond language; i.e. different cultures have different interpretations for design elements such as colour and iconography."
@@ -13,7 +13,7 @@ define([], function () {
       answer: "Data attributes are useful for housing custom data within within HTML elements; these can be accessed via JS etc"
     },
     { question: "Consider HTML5 as an open web platform. What are the building blocks of HTML5?",
-      answer: "meow"// TODO:
+      answer: "Semantics - allowing you to precisely describe what your content is\nConnectivity - can connect w/ server in new and innovative ways\nOffline/online storage - webpages can store data locally and operate offline\nMultimedia - video and audio are first class citizens\n2D/3D graphics - more diverse presentation options\nPerformance and integration - better usage of computer hardware\nDevice access - enabled use of various input/output devices\nStyling - enabling more sophisticated themes"
     },
     { question: "Describe the difference between a cookie, sessionStorage and localStorage.",
       answer: "An HTTP cookie is a small piece of data sent from the server and often returned on the next request - can be used, for example, to tell if a user is still logged in\nSession storage allows for key-value pairs of data to be stored on the browser for as long as the active window is open\nLocal storage allows key-value pairs to be stored in a users browser until the cache size is exceeded or the cache is cleared"
@@ -31,7 +31,7 @@ define([], function () {
       answer: "A srcset attribute can be used to deliver different images or different sized versions of the same image depending on device screen sizes (i.e. larger imgs for retina displays vs smaller imgs for mobile devices)\nUsing the img size attribute we can set the media condition for a certain image to be displayed"
     },
     { question: "Have you used different HTML templating languages before?",
-      answer: "Yep, I have primarily used JSX when working with React. I have also used Handlebars and Moustache."
+      answer: "Yep, I have used JSX extensively when working with React. I have also used Handlebars and Moustache."
     }
   ];
 

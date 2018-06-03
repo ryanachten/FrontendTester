@@ -13,7 +13,7 @@ define([], function () {
       answer: "Z-index describes the order in which elements are layered on top of one another. Typically the stacking context is created in the root element of the doc. This order can be manipulated by assigning z-index larger than 0 to an element. Additional stacking contexts can be created where specific properties require it (i.e. opacity)"
     },
     { question: "Describe BFC(Block Formatting Context) and how it works.",
-      answer: "BFC occurs when floats contain and restrain to help dictate the positioning of elements on a page"
+      answer: "A BFC is an area where block and float elements are placed. These contexts are like containers which have flow rules, which used to contain and restrain the positioning of their elements on a page as well as preventing margins from collapsing."
     },
     { question: "What are the various clearing techniques and which is appropriate for what context?",
       answer: "The clear property can be used with floating elements to prevent elements sitting to the left, right or both side of the element in question\nThe clearfix technique is often used when there is a need to automatically clear an element’s child elements (to say, stack elements horizontally or combat the zero height container issue)"
@@ -25,10 +25,10 @@ define([], function () {
       answer: "I believe there are two main approaches for this depending on user needs:\nIf feature constrained browsers are common amongst key users, then prioritising their capabilities (and lack thereof) is paramount\nIf feature constrained browsers are used only by the minority, then proceeding with advanced features is OK as long as there are polyfills for the features in constrained browsers"
     },
     { question: "What are the different ways to visually hide content (and make it available only for screen readers)?",
-      answer: "A common approach is to position the element in question off the page using absolute and a left or right measurement"
+      answer: "The generally recommended approach is to absolute position the element in question off the page using and a left or right measurement. Other approaches, such as using text-indent or clipping have their own drawbacks."
     },
     { question: "Have you ever used a grid system, and if so, what do you prefer?",
-      answer: "I have predominantly used Foundation’s grid system and played with Bootstrap in the past. I prefer the control available in pure css systems like Flexbox"
+      answer: "I have used Foundation’s grid system and briefly used Bootstrap in the past. I prefer the control available in modern CSS-only systems such as Flexbox"
     },
     { question: "Have you used or implemented media queries or mobile specific layouts/CSS?",
       answer: "Absolutely. When a fluid grid does not cater for mobile adequately, I will definitely use media queries"
@@ -37,7 +37,7 @@ define([], function () {
       answer: "I usually create and style my SVG assets in Illustrator and Sketch before optimising in SVGOmg. I have used SVG filters in the past too."
     },
     { question: "Can you give an example of an @media property other than screen?",
-      answer: "I believe you can use it to target print and speech styles too"
+      answer: "Can be used to deliver print and speech-specific styles too"
     },
     { question: "What are some of the 'gotchas' for writing efficient CSS?",
       answer: "Specificity helps aid performance; i.e. reduce wildcards and other selectors which apply to large numbers of tags\nAvoid unused and redundant code\nAs with any other code, keep it DRY (use of mixins and variables with SCSS can be useful here)"
@@ -46,7 +46,7 @@ define([], function () {
       answer: "Preprocessors are great in the sense that they allow for modularity in styles, enabling easier maintainability, and often provide minification which is great from a performance standpoint. Variables, mixins etc are awesome features too. In general, css becomes moe programmatic.\nDisadvantages are there is sometimes a delay when compiling styles for larger projects. Larger projects can also produce bloated css files (even w/ minification) - these can be broken into multiple docs though."
     },
     { question: "Describe what you like and dislike about the CSS preprocessors you have used.",
-      answer: "I predominantly use SCSS via the Sass CLI as a I prefer the syntax slightly to Sass. I have used Sass in the past and I have looked into Less."
+      answer: "I predominantly use SCSS via the Sass CLI as a I prefer the syntax to Sass. I have used Sass in the past and I have looked into Less."
     },
     { question: "How would you implement a web design comp that uses non-standard fonts?",
       answer: "If the font is one hosted via Google Fonts or another host, these can be simply linked or imported via the CDN\nHowever, it is a font provided locally, these can be imported in using the @font-face rule in CSS, providing the url with font file type fallbacks"
@@ -64,16 +64,16 @@ define([], function () {
       answer: "This CSS rule overrides the default box sizing setting from content-box to border-box. Border-box can be useful as it arguably allows for easier alignment of elements, especially in a parent/child context"
     },
     { question: "What is the CSS display property and can you give a few examples of its use?",
-      answer: "The display property specifies the type of rendering box to be used when displaying an element. This can affect the size, position and visibility of the element in question, by setting to say, Block, as opposed to none"
+      answer: "The display property specifies the type of rendering box to be used when displaying an element. This can affect the size, position and visibility of the element in question, by setting it to ‘block’, as opposed to ‘none’"
     },
     { question: "What's the difference between inline and inline-block?",
-      answer: "An inline element sits along the same baseline as other inline elements, cannot have height and width defined (defined by content size), repsects only left and right margins\nAn inline block element also sits along the baseline with other inline elements, however can have height and width defined and respects all margins"
+      answer: "An inline element sits along the same baseline as other inline elements, cannot have height and width defined (defined by content size) and respects only left and right margins\nAn inline block element also sits along the baseline with other inline elements, however can have height and width defined and respects all margins"
     },
     { question: "What's the difference between a relative, fixed, absolute and statically positioned element?",
-      answer: "Relative positioning right/left/top/bottom units act as an offset from its original position\nAbsolute places the element outside of the fluid and allows the element to be translated to the right/left/top/bottom of their parent element\nFixed places the element outside of the fluid grid altogether, allowing it to be placed independently statically relative to viewport"
+      answer: "Relative positioning right/left/top/bottom units act as an offset from its original position\nAbsolute places the element outside of the normal document flow and allows the element to be translated to the right/left/top/bottom of their parent element\nFixed places the element outside of the normal document flow altogether, allowing it to be placed independently statically relative to viewport"
     },
     { question: "What existing CSS frameworks have you used locally, or in production? How would you change/improve them?",
-      answer: "I have used Foundation by Zurb a lot. I generally like the base styles, however, the grid system irks me - it doesn’t account well for, from my experience, retina displays"
+      answer: "I have used Foundation by Zurb and various implementations of Google’s Material Design system a lot. I generally like their base styles, however, Foundation’s grid system irks me - it doesn’t account well for, from my experience, retina displays"
     },
     { question: "Have you played around with the new CSS Flexbox or Grid specs?",
       answer: "I have used Flexbox extensively in a number of projects. I looked into CSS Grid when it came out last year but wasn’t widely supported. I notice support has now improved, so would consider using it these days"
@@ -82,10 +82,10 @@ define([], function () {
       answer: "Making a website responsive implies that the website already exists in a non-responsive manner and requires styles to be created to account for other screen sizes.\nWhen developing mobile-first, we begin with the lower screen real estate and performance that these devices have to offer. Other devices and screen sizes are developed subsequently. User experience for mobile devices here is paramount."
     },
     { question: "Have you ever worked with retina graphics? If so, when and what techniques did you use?",
-      answer: "No, but if I did I would create different versions of the same image, cropped and scaled for different breakpoints (incl. retina screen sizes)\nusing srcset we can target different screen sizes and link to appropriate images for those sizes. In addition to screen sizes, we can target resolutions if necessary using dpi and pixel ratios"
+      answer: "Using srcset we can target different screen sizes and link to appropriate images for those sizes. In addition to screen sizes, we can target resolutions if necessary using dpi and pixel ratios "
     },
     { question: "Is there any reason you'd want to use translate() instead of absolute positioning, or vice-versa? And why?",
-      answer: "If the element needs to be statically positioned, then absolute + tbrl is fine, however, if the element needs to be animated then using translate is a more performant solution as it has a lower paint time because it sits on the GPU."
+      answer: "If the element needs to be statically positioned, then absolute + t/b/r/l is fine, however, if the element needs to be animated then using translate() is a more performant solution as it has a lower paint time because it sits on the GPU."
     }
   ];
 
