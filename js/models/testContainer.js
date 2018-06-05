@@ -21,7 +21,11 @@ define([
     createNewModel: function () {
 
       const allQuestionHash = this.get('allQuestions');
-      const storedQuestions = JSON.parse(sessionStorage.getItem('answers'));
+      let storedQuestions = JSON.parse(sessionStorage.getItem('answers'));
+      if (!storedQuestions) {
+        storedQuestions = {};
+      }
+      console.log();
       // Get active sections
       const allSections = this.get('questionSections');
       const activeSections = allSections.map( (item) => {
