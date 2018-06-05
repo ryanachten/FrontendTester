@@ -12,9 +12,15 @@ define([
     // Create question hash
     const questionKeys = Object.keys(allQuestions);
     const allQuestionHash = {};
+    const questionSections = [];
     // Iterate through sections
     questionKeys.map( (section) => {
-      // Iterate through section questions
+      // Add section name to section list
+      questionSections.push({
+        section, active: true
+      });
+
+      // Iterate through section questions and add them to hash
       allQuestions[section].map( (item) => {
           allQuestionHash[uuid()] = {
             section,
@@ -25,7 +31,10 @@ define([
     });
 
     // Create test model + view and render
-    const testContainer = new TestContainer({ allQuestions: allQuestionHash });
+    const testContainer = new TestContainer({
+      allQuestions: allQuestionHash,
+      questionSections,
+    });
     testContainer.createNewModel(); //create initial question model
 
     const testContainerView = new TestContainerView({ model: testContainer });

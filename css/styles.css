@@ -4416,7 +4416,7 @@ textarea {
 
 [type="radio"]:not(:checked) + span:before,
 [type="radio"]:not(:checked) + span:after {
-  border: 2px solid #5a5a5a; }
+  border: 2px solid #fafafa; }
 
 [type="radio"]:not(:checked) + span:after {
   transform: scale(0); }
@@ -4497,7 +4497,7 @@ textarea {
     width: 18px;
     height: 18px;
     z-index: 0;
-    border: 2px solid #5a5a5a;
+    border: 2px solid #fafafa;
     border-radius: 1px;
     margin-top: 3px;
     transition: .2s; }
@@ -4569,7 +4569,7 @@ textarea {
   height: 20px;
   width: 20px;
   background-color: transparent;
-  border: 2px solid #5a5a5a;
+  border: 2px solid #fafafa;
   top: 0px;
   z-index: 0; }
 [type="checkbox"].filled-in:checked + span:not(.lever):before {
@@ -4592,7 +4592,7 @@ textarea {
   z-index: 0; }
 [type="checkbox"].filled-in.tabbed:focus + span:not(.lever):after {
   border-radius: 2px;
-  border-color: #5a5a5a;
+  border-color: #fafafa;
   background-color: rgba(0, 0, 0, 0.1); }
 [type="checkbox"].filled-in.tabbed:checked:focus + span:not(.lever):after {
   border-radius: 2px;

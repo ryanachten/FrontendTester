@@ -184,7 +184,7 @@ $placeholder-text-color: lighten($input-border-color, 20%) !default;
 
 // Radio Buttons
 $radio-fill-color: $secondary-color !default;
-$radio-empty-color: #5a5a5a !default;
+$radio-empty-color: color("grey", "lighten-5") !default;
 $radio-border: 2px solid $radio-fill-color !default;
 
 // Range

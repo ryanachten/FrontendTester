@@ -15,7 +15,8 @@ define([
 
     events: {
       'click .submitAnswer' : 'onSubmitAnswer',
-      'click .nextQuestion' : 'onNextQuestion'
+      'click .nextQuestion' : 'onNextQuestion',
+      'click .sectionToggle' : 'onToggleQuestionSection'
     },
 
     onSubmitAnswer: function () {
@@ -44,11 +45,25 @@ define([
       this.render();
     },
 
-    render: function () {
+    onToggleQuestionSection: function (e) {
+      const toggledSection = e.target.value;
+      const checked = e.target.checked;
+      const allSections = this.model.get('questionSections');
+      const newSections = allSections.map((item) => {
+        if (item.section === toggledSection) {
+          item.active = checked
+        }
+        return item;
+      });
+      // console.log(newSections);
+      this.model.set('questionSections', newSections);
+    },
 
+    render: function () {
       const questionItem = this.model.get('questionItem');
 
       let templateData = {
+        "sections" : this.model.get('questionSections'),
         "showAnswer": this.model.get('showAnswer'),
         "question": questionItem.get('question'),
         "section": questionItem.get('section'),

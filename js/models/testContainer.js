@@ -17,13 +17,29 @@ define([
       'showAnswer': false
     },
 
-      // Create new model based off randomly assigned question
+    // Create new model based off randomly assigned question
     createNewModel: function () {
 
       const allQuestionHash = this.get('allQuestions');
-      const tempIndex = Math.floor(Math.random()*Object.keys(allQuestionHash).length);
-      const tempKey = Object.keys(allQuestionHash)[tempIndex];
-      const currentQuestion = allQuestionHash[tempKey];
+      // Get active sections
+      const allSections = this.get('questionSections');
+      const activeSections = allSections.map( (item) => {
+        if (item.active) {
+            return item.section;
+        }
+      });
+      // Iterate through questions, if question's section is active
+      // add it to the activeQuestion hash
+      const activeQuestions = {};
+      Object.keys(allQuestionHash).map((key) => {
+        if (activeSections.includes(allQuestionHash[key].section)) {
+          activeQuestions[key] = allQuestionHash[key];
+        }
+      });
+      // Select random question based off available questions
+      const tempIndex = Math.floor(Math.random()*Object.keys(activeQuestions).length);
+      const tempKey = Object.keys(activeQuestions)[tempIndex];
+      const currentQuestion = activeQuestions[tempKey];
 
       const questionItem = new QuestionItem({
         key: tempKey,
