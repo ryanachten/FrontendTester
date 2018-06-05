@@ -20,15 +20,15 @@
       <script type="text/html" id="testContainerTemplate">
         <div class="test__container {{section}}">
           <div class="test__content">
-            <div>
+            <div class="test__sectionToggleContainer">
               {{#sections}}
-              <label>
+              <label class="test__sectionToggle">
                 {{#active}}
-                  <input class="sectionToggle" value="{{section}}" type="checkbox"
+                  <input class="sectionToggleInput" value="{{section}}" type="checkbox"
                   checked/>
                 {{/active}}
                 {{^active}}
-                  <input class="sectionToggle" value="{{section}}" type="checkbox"/>
+                  <input class="sectionToggleInput" value="{{section}}" type="checkbox"/>
                 {{/active}}
                 <span>{{section}}</span>
               </label>

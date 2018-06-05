@@ -5044,6 +5044,16 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
   display: flex;
   align-items: center; }
 
+.test__sectionToggleContainer {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 500px;
+  margin: 0 auto;
+  justify-content: center; }
+
+.test__sectionToggle {
+  margin-right: 30px; }
+
 .test__content {
   max-width: 1000px;
   margin: 0 auto;

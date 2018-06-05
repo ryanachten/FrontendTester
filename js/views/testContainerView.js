@@ -16,7 +16,7 @@ define([
     events: {
       'click .submitAnswer' : 'onSubmitAnswer',
       'click .nextQuestion' : 'onNextQuestion',
-      'click .sectionToggle' : 'onToggleQuestionSection'
+      'click .sectionToggleInput' : 'onToggleQuestionSection'
     },
 
     onSubmitAnswer: function () {
@@ -55,7 +55,6 @@ define([
         }
         return item;
       });
-      // console.log(newSections);
       this.model.set('questionSections', newSections);
     },
 
