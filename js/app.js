@@ -21,12 +21,14 @@ define([
       });
 
       // Iterate through section questions and add them to hash
+      let index = 0;
       allQuestions[section].map( (item) => {
-          allQuestionHash[uuid()] = {
-            section,
-            question: item.question,
-            storedAnswer: item.answer
-          };
+        allQuestionHash[section+index] = {
+          section,
+          question: item.question,
+          storedAnswer: item.answer
+        };
+        index++;
       });
     });
 

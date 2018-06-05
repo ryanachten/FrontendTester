@@ -21,6 +21,7 @@ define([
     createNewModel: function () {
 
       const allQuestionHash = this.get('allQuestions');
+      const storedQuestions = JSON.parse(sessionStorage.getItem('answers'));
       // Get active sections
       const allSections = this.get('questionSections');
       const activeSections = allSections.map( (item) => {
@@ -28,14 +29,28 @@ define([
             return item.section;
         }
       });
-      // Iterate through questions, if question's section is active
-      // add it to the activeQuestion hash
+      // Iterate through questions
       const activeQuestions = {};
       Object.keys(allQuestionHash).map((key) => {
-        if (activeSections.includes(allQuestionHash[key].section)) {
+        if (
+          //if question's section is active
+          activeSections.includes(allQuestionHash[key].section)
+          // and if the question has not already been stored
+          && !storedQuestions.hasOwnProperty(key)
+        ) {
+          // add the question to available questions
           activeQuestions[key] = allQuestionHash[key];
         }
       });
+
+      // If there are no available questions set to null
+      // to display feedback message
+      if (Object.keys(activeQuestions).length === 0) {
+        console.log('No more questions to display');
+        this.set('questionItem', null);
+        return;
+      }
+
       // Select random question based off available questions
       const tempIndex = Math.floor(Math.random()*Object.keys(activeQuestions).length);
       const tempKey = Object.keys(activeQuestions)[tempIndex];

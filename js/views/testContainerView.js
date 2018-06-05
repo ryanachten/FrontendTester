@@ -61,6 +61,16 @@ define([
     render: function () {
       const questionItem = this.model.get('questionItem');
 
+      // If there are no more questions to show,
+      // render feedback message
+      if (questionItem === null) {
+        console.log('Render no questions feedback');
+        const template = $('#noQuestionsTemplate').html();
+        const html = Mustache.render(template, {});
+        this.$el.html(html);
+        return this;
+      }
+
       let templateData = {
         "sections" : this.model.get('questionSections'),
         "showAnswer": this.model.get('showAnswer'),

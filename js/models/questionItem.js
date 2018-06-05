@@ -27,14 +27,17 @@ define([
       // get existing answers
       let allAnswers;
       if (sessionStorage.answers) {
+        // if anwsers exist, parse obj
         allAnswers = JSON.parse(sessionStorage.getItem('answers'));
       }
       else{
-        allAnswers = [];
+        // if questions haven't been answered, create answer obj
+        allAnswers = {};
       }
-      // add new answer
-      allAnswers.push(JSON.stringify(this));
-      // add to local storage
+      // assign answer to question key
+      const currentKey = this.get('key');
+      allAnswers[currentKey] = JSON.stringify(this);
+      // add updated question object to local storage
       window.sessionStorage.setItem('answers', JSON.stringify(allAnswers));
     }
   });
