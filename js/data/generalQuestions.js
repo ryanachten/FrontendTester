@@ -81,7 +81,7 @@ define([], function () {
     },
     {
       question: "Explain what ARIA and screenreaders are, and how to make a website accessible.",
-      answer: "Screen readers are an assistive technology which uses speech-to-text to read out displayed content to the visually-impaired.\nAccessible Rich Internet Applications is a set of attributes and best practices to help increase accessibility across the web. We can use specific aria elements and attributes to better contextualise or explain elements of a website to those using visual aids such as screen readers."
+      answer: "Screen readers are an assistive technology which uses text-to-speech to read out displayed content to the visually-impaired.\nAccessible Rich Internet Applications is a set of attributes and best practices to help increase accessibility across the web. We can use specific aria elements and attributes to better contextualise or explain elements of a website to those using visual aids such as screen readers."
     },
     {
       question: "Explain some of the pros and cons for CSS animations versus JavaScript animations.",

@@ -61,7 +61,7 @@ define([], function () {
       answer: "The box model describes how the browser is supposed to interpret element sizing with respect to borders, margins, padding and content.\nYou can change the box model through the CSS box sizing attribute. When set to content box, width and height refer to the content area size (margin/padding/border non-inclusive). When set to border-box, the size of an element includes its borders, margins, padding and content."
     },
     { question: "What does * { box-sizing: border-box; } do? What are its advantages?",
-      answer: "This CSS rule overrides the default box sizing setting from content-box to border-box. Border-box can be useful as it arguably allows for easier alignment of elements, especially in a parent/child context"
+      answer: "This CSS rule overrides the default box sizing setting from content-box to border-box. When set to border-box, the size of an element includes its borders, margins, padding and content. Border-box can be useful as it arguably allows for easier alignment of elements, especially in a parent/child context"
     },
     { question: "What is the CSS display property and can you give a few examples of its use?",
       answer: "The display property specifies the type of rendering box to be used when displaying an element. This can affect the size, position and visibility of the element in question, by setting it to ‘block’, as opposed to ‘none’"

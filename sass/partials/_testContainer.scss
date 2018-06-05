@@ -23,6 +23,7 @@
   h3{
     @include text-gradient;
     margin: 0;
+		white-space: pre-line;
   }
   @include custom-card;
 	margin: 0 auto;

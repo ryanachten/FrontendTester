@@ -5070,7 +5070,8 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
     background: -webkit-linear-gradient(#eee, #333);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 0; }
+    margin: 0;
+    white-space: pre-line; }
 
 .test__container.general {
   background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%); }
@@ -5120,7 +5121,7 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
 .answerField, .answerField::placeholder {
   color: white;
   font-family: "Jua", sans-serif;
-  font-size: 1.2rem; }
+  font-size: 1.5rem !important; }
 
 .submitAnswer {
   color: black;
