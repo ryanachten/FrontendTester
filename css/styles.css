@@ -5045,14 +5045,16 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
   align-items: center; }
 
 .test__sectionToggleContainer {
+  border: 1px solid white;
   display: flex;
   flex-flow: row wrap;
-  max-width: 500px;
-  margin: 0 auto;
-  justify-content: center; }
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  padding: 20px; }
 
 .test__sectionToggle {
-  margin-right: 30px; }
+  margin: 10px; }
 
 .test__content {
   max-width: 1000px;
@@ -5061,13 +5063,28 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
   text-align: center; }
 
 .test__section {
-  border: 1px solid white;
-  color: white;
   display: inline-block;
   letter-spacing: 3px;
-  margin: 40px 0;
-  padding: 20px;
+  margin: 20px 0;
   text-transform: uppercase; }
+  .test__section.general {
+    color: #50A7C2; }
+  .test__section.html {
+    color: #D57EEB; }
+  .test__section.css {
+    color: #5271C4; }
+  .test__section.javascript {
+    color: #FA709A; }
+  .test__section.testing {
+    color: #64B3F4; }
+  .test__section.performance {
+    color: #F68084; }
+  .test__section.network {
+    color: #8EC5FC; }
+  .test__section.coding {
+    color: #A18CD1; }
+  .test__section.fun {
+    color: #FF7EB3; }
 
 .test__question {
   background: #FFFFFF;
@@ -5083,50 +5100,24 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
     margin: 0;
     white-space: pre-line; }
 
-.test__container.general {
+.test__container.general, .test__question h3.general {
   background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%); }
-  .test__container.general .test__question h3 {
-    background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%); }
-
-.test__container.html {
+.test__container.html, .test__question h3.html {
   background-image: linear-gradient(62deg, #D57EEB 0%, #FCCB90 100%); }
-  .test__container.html .test__question h3 {
-    background-image: linear-gradient(62deg, #D57EEB 0%, #FCCB90 100%); }
-
-.test__container.css {
+.test__container.css, .test__question h3.css {
   background-image: linear-gradient(-225deg, #5271C4 0%, #B19FFF 48%, #ECA1FE 100%); }
-  .test__container.css .test__question h3 {
-    background-image: linear-gradient(-225deg, #5271C4 0%, #B19FFF 48%, #ECA1FE 100%); }
-
-.test__container.javascript {
+.test__container.javascript, .test__question h3.javascript {
   background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%); }
-  .test__container.javascript .test__question h3 {
-    background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%); }
-
-.test__container.testing {
+.test__container.testing, .test__question h3.testing {
   background-image: linear-gradient(-66deg, #C2E59C 0%, #64B3F4 100%); }
-  .test__container.testing .test__question h3 {
-    background-image: linear-gradient(-66deg, #C2E59C 0%, #64B3F4 100%); }
-
-.test__container.performance {
+.test__container.performance, .test__question h3.performance {
   background-image: linear-gradient(62deg, #F68084 0%, #A6C0FE 100%); }
-  .test__container.performance .test__question h3 {
-    background-image: linear-gradient(62deg, #F68084 0%, #A6C0FE 100%); }
-
-.test__container.network {
+.test__container.network, .test__question h3.network {
   background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%); }
-  .test__container.network .test__question h3 {
-    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%); }
-
-.test__container.coding {
+.test__container.coding, .test__question h3.coding {
   background-image: linear-gradient(-180deg, #FBC2EB 0%, #A18CD1 100%); }
-  .test__container.coding .test__question h3 {
-    background-image: linear-gradient(-180deg, #FBC2EB 0%, #A18CD1 100%); }
-
-.test__container.fun {
+.test__container.fun, .test__question h3.fun {
   background-image: linear-gradient(90deg, #FF7EB3 0%, #FF758C 100%); }
-  .test__container.fun .test__question h3 {
-    background-image: linear-gradient(90deg, #FF7EB3 0%, #FF758C 100%); }
 
 .answerField, .answerField::placeholder {
   color: white;
@@ -5156,31 +5147,42 @@ input[type=range].focused:focus:not(.active)::-ms-thumb {
   .submitAnswer.fun {
     color: #FF7EB3; }
 
-.test__answers.general .test__userAnswers, .test__answers.general .test__storedAnswers {
+.test__userAnswers.general {
   color: #50A7C2; }
-
-.test__answers.html .test__userAnswers, .test__answers.html .test__storedAnswers {
+.test__userAnswers.html {
   color: #D57EEB; }
-
-.test__answers.css .test__userAnswers, .test__answers.css .test__storedAnswers {
+.test__userAnswers.css {
   color: #5271C4; }
-
-.test__answers.javascript .test__userAnswers, .test__answers.javascript .test__storedAnswers {
+.test__userAnswers.javascript {
   color: #FA709A; }
-
-.test__answers.testing .test__userAnswers, .test__answers.testing .test__storedAnswers {
+.test__userAnswers.testing {
   color: #64B3F4; }
-
-.test__answers.performance .test__userAnswers, .test__answers.performance .test__storedAnswers {
+.test__userAnswers.performance {
   color: #F68084; }
-
-.test__answers.network .test__userAnswers, .test__answers.network .test__storedAnswers {
+.test__userAnswers.network {
   color: #8EC5FC; }
-
-.test__answers.coding .test__userAnswers, .test__answers.coding .test__storedAnswers {
+.test__userAnswers.coding {
   color: #A18CD1; }
+.test__userAnswers.fun {
+  color: #FF7EB3; }
 
-.test__answers.fun .test__userAnswers, .test__answers.fun .test__storedAnswers {
+.test__storedAnswers.general {
+  color: #50A7C2; }
+.test__storedAnswers.html {
+  color: #D57EEB; }
+.test__storedAnswers.css {
+  color: #5271C4; }
+.test__storedAnswers.javascript {
+  color: #FA709A; }
+.test__storedAnswers.testing {
+  color: #64B3F4; }
+.test__storedAnswers.performance {
+  color: #F68084; }
+.test__storedAnswers.network {
+  color: #8EC5FC; }
+.test__storedAnswers.coding {
+  color: #A18CD1; }
+.test__storedAnswers.fun {
   color: #FF7EB3; }
 
 .test__answers {

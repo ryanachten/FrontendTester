@@ -5,14 +5,16 @@
 	align-items: center;
 }
 .test__sectionToggleContainer{
+	border: 1px solid white;
 	display: flex;
 	flex-flow: row wrap;
-	max-width: 500px;
-	margin: 0 auto;
 	justify-content: center;
+	max-width: 600px;
+	margin: 0 auto 40px auto;
+	padding: 20px;
 }
 .test__sectionToggle{
-	margin-right: 30px;
+	margin: 10px;
 }
 .test__content{
   max-width: 1000px;
@@ -21,13 +23,12 @@
 	text-align: center;
 }
 .test__section{
-  border: 1px solid white;
-	color: white;
   display: inline-block;
   letter-spacing: 3px;
-  margin: 40px 0;
-  padding: 20px;
+  margin: 20px 0;
 	text-transform: uppercase;
+
+  @include getSectionColours;
 }
 .test__question{
   h3{
@@ -41,57 +42,6 @@
   margin-bottom: 40px;
 }
 
-.test__container.general{
-	background-image: $general-grad;
-  .test__question h3{
-    background-image: $general-grad;
-  }
-}
-.test__container.html{
-	background-image: $html-grad;
-  .test__question h3{
-    background-image: $html-grad;
-  }
-}
-.test__container.css{
-	background-image: $css-grad;
-  .test__question h3{
-    background-image: $css-grad;
-  }
-}
-.test__container.javascript{
-	background-image: $javascript-grad;
-  .test__question h3{
-    background-image: $javascript-grad;
-  }
-}
-.test__container.testing{
-	background-image: $testing-grad;
-  .test__question h3{
-    background-image: $testing-grad;
-  }
-}
-.test__container.performance{
-	background-image: $performance-grad;
-  .test__question h3{
-    background-image: $performance-grad;
-  }
-}
-.test__container.network{
-	background-image: $network-grad;
-  .test__question h3{
-    background-image: $network-grad;
-  }
-}
-.test__container.coding {
-	background-image: $coding-grad;
-  .test__question h3{
-    background-image: $coding-grad;
-  }
-}
-.test__container.fun {
-	background-image: $fun-grad;
-  .test__question h3{
-    background-image: $fun-grad;
-  }
+.test__container, .test__question h3{
+	@include getSectionGradients;
 }

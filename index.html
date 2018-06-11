@@ -33,17 +33,17 @@
               </label>
               {{/sections}}
             </div>
-            <h6 class="test__section">{{section}} question</h6>
-            <div class="test__question">
-              <h3>{{question}}</h3>
+            <div class="test__question {{section}}">
+              <h6 class="test__section {{section}}">{{section}} question</h6>
+              <h3 class="{{section}}">{{question}}</h3>
             </div>
             {{#showAnswer}}
-              <div class="test__answers {{section}}">
-                <div class="test__userAnswers">
+              <div class="test__answers">
+                <div class="test__userAnswers {{section}}">
                   <h6>Your Answer</h6>
                   <p>{{userAnswer}}</p>
                 </div>
-                <div class="test__storedAnswers">
+                <div class="test__storedAnswers {{section}}">
                   <h6>Example Answer</h6>
                   <p>{{storedAnswer}}</p>
                 </div>

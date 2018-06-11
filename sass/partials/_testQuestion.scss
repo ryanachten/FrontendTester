@@ -8,78 +8,13 @@
   font-family: $header-type;
   text-transform: capitalize;
 
-  &.general{
-    color: $general-color;
-  }
-  &.html{
-    color: $html-color;
-  }
-  &.css{
-    color: $css-color;
-  }
-  &.javascript{
-    color: $javascript-color;
-  }
-  &.testing{
-    color: $testing-color;
-  }
-  &.performance{
-    color: $performance-color;
-  }
-  &.network{
-    color: $network-color;
-  }
-  &.coding{
-    color: $coding-color;
-  }
-  &.fun{
-    color: $fun-color;
-  }
+  @include getSectionColours;
 }
 
+.test__userAnswers{
+  @include getSectionColours;
+}
 
-.test__answers.general{
-  .test__userAnswers, .test__storedAnswers{
-    color: $general-color;
-  }
-}
-.test__answers.html{
-  .test__userAnswers, .test__storedAnswers{
-    color: $html-color;
-  }
-}
-.test__answers.css{
-  .test__userAnswers, .test__storedAnswers{
-    color: $css-color;
-  }
-}
-.test__answers.javascript{
-  .test__userAnswers, .test__storedAnswers{
-    color: $javascript-color;
-  }
-}
-.test__answers.testing{
-  .test__userAnswers, .test__storedAnswers{
-    color: $testing-color;
-  }
-}
-.test__answers.performance{
-  .test__userAnswers, .test__storedAnswers{
-    color: $performance-color;
-  }
-}
-.test__answers.network{
-  .test__userAnswers, .test__storedAnswers{
-    color: $network-color;
-  }
-}
-.test__answers.coding {
-  .test__userAnswers, .test__storedAnswers{
-    color: $coding-color;
-  }
-}
-.test__answers.fun {
-  .test__userAnswers, .test__storedAnswers{
-    color: $fun-color;
-  }
+.test__storedAnswers{
+  @include getSectionColours;
 }

@@ -1,0 +1,71 @@
+@mixin getSectionColours {
+  &.general{
+    color: $general-color;
+  }
+  &.html{
+    color: $html-color;
+  }
+  &.css{
+    color: $css-color;
+  }
+  &.javascript{
+    color: $javascript-color;
+  }
+  &.testing{
+    color: $testing-color;
+  }
+  &.performance{
+    color: $performance-color;
+  }
+  &.network{
+    color: $network-color;
+  }
+  &.coding{
+    color: $coding-color;
+  }
+  &.fun{
+    color: $fun-color;
+  }
+}
+
+@mixin getSectionGradients {
+  &.general{
+  	background-image: $general-grad;
+  }
+  &.html{
+  	background-image: $html-grad;
+  }
+  &.css{
+  	background-image: $css-grad;
+  }
+  &.javascript{
+  	background-image: $javascript-grad;
+  }
+  &.testing{
+  	background-image: $testing-grad;
+  }
+  &.performance{
+  	background-image: $performance-grad;
+  }
+  &.network{
+  	background-image: $network-grad;
+  }
+  &.coding {
+  	background-image: $coding-grad;
+  }
+  &.fun {
+  	background-image: $fun-grad;
+  }
+}
+
+@mixin custom-card {
+  background: #FFFFFF;
+  box-shadow: 0 0 24px 0 rgba(0,0,0,0.22), 0 24px 24px 0 rgba(0,0,0,0.30);
+  border-radius: 10px;
+}
+
+@mixin text-gradient {
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

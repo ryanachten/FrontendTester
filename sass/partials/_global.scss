@@ -22,17 +22,6 @@ $bg-color: white;
 $header-type: 'Jua', sans-serif;
 $body-type: 'Arial', sans-serif;
 
-@mixin custom-card {
-  background: #FFFFFF;
-  box-shadow: 0 0 24px 0 rgba(0,0,0,0.22), 0 24px 24px 0 rgba(0,0,0,0.30);
-  border-radius: 10px;
-}
-
-@mixin text-gradient {
-  background: -webkit-linear-gradient(#eee, #333);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 * {
   font-family: $header-type;
